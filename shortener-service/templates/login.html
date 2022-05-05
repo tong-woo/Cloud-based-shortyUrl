@@ -1,0 +1,37 @@
+<!doctype html>
+<html style="overflow-x: hidden">
+    {% include "header.html" %}
+    <body class="hm-index-body text-center" style="overflow-x: hidden">
+        <div class="header-bar"></div>
+        <div class="main-container">
+            <h1> Shorty URL | LOGIN </h1>
+            <h5 style="font-style: italic; font-size: 12px"> A WS & CBS project </h5>
+            <div class="menu-bar">
+                <button type="button" class="my-btn my-btn-menu login-link"><a href="/home" style="color: white"> HOME </a></button>
+                <button type="button" class="my-btn my-btn-menu login-link"><a href="/login" style="color: white"> LOGIN </a></button>
+            </div>
+
+            <div class="separator" style="margin-bottom: 64px"></div>
+            <div class="login-container">
+                <div class="login-form-container">
+                    <h3> Login </h3>
+                    <input type="text" id="username" placeholder="Your username...">
+                    <input type="password" id="password" placeholder="Your password">
+                    <button type="button" id="login-btn" class="my-btn my-btn-danger"> LOGIN </button>
+                    <div id="extra-message-login" style="font-style: italic; font-size: 12px; color: #c49b1f; margin-top: 8px;"></div>
+                </div>
+                <div class="login-form-container">
+                    <h3> New Account </h3>
+                    <input type="text" id="new-username" placeholder="Your username...">
+                    <input type="password" id="new-password" placeholder="Your password">
+                    <button type="button" id="create-account" class="my-btn my-btn-danger"> REGISTER </button>
+                    <div id="extra-message-register" style="font-style: italic; font-size: 12px; color: #c49b1f; margin-top: 8px;"></div>
+                </div>
+            </div>
+
+        </div>
+
+    {% include "footer.html" %}
+    <script src="/static/js/login.js"></script>
+    </body>
+</html>

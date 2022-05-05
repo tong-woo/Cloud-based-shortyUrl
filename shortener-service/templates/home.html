@@ -1,0 +1,33 @@
+<!doctype html>
+<html style="overflow-x: hidden">
+    {% include "header.html" %}
+    <body class="hm-index-body text-center" style="overflow-x: hidden">
+        <div class="header-bar"></div>
+        <div class="main-container">
+            <h1> Shorty URL | HOME </h1>
+            <h5 style="font-style: italic; font-size: 12px"> A WS & CBS project </h5>
+
+            <div class="menu-bar">
+                <button type="button" class="my-btn my-btn-menu login-link"><a href="/home" style="color: white"> HOME </a></button>
+                <button type="button" class="my-btn my-btn-menu login-link"><a href="/login" style="color: white"> LOGIN </a></button>
+            </div>
+
+            <div class="separator" style="margin-bottom: 64px"></div>
+
+            <input type="url" id="new-url" placeholder="The URL you want to shorten...">
+            <button type="button" id="create-url" class="my-btn my-btn-danger"> SHORTEN </button>
+            <div id="extra-message" style="font-style: italic; font-size: 12px; color: #c49b1f; margin-top: 8px;">
+
+            </div>
+
+            <div class="urls-box">
+            </div>
+
+            <button type="button" id="deleteAll" class="my-btn my-btn-danger"> DELETE ALL </button>
+
+        </div>
+
+    {% include "footer.html" %}
+    <script src="/static/js/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+    login:
+        build: ./login-service
+        ports:
+            - "8081:8081"
+        volumes:
+            - .:/app
+            - ./login-service/venv:/app/venv
+        env_file:
+            - ./login-service/.env
+        networks:
+            - shorty-network
+        container_name: "login-service"
+
+    shortener:
+        build: ./shortener-service
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/app
+            - ./shortener-service/venv:/app/venv
+        env_file:
+            - ./shortener-service/.env
+        networks:
+            - shorty-network
+        container_name: "shortener-service"
+
+networks:
+  shorty-network:
+    external: false
+    name: shorty-network
