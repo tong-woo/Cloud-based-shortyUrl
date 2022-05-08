@@ -4,3 +4,4 @@ gunicorn==20.1.0
 waitress~=2.1.1
 PyJWT~=2.3.0
 newrelic~=7.10.0.175
+pymongo[tls,srv]~=4.1.1

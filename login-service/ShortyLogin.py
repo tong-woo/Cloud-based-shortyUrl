@@ -3,11 +3,17 @@ from flask import Flask, request, redirect, render_template
 import newrelic
 import os
 import jwt
+import pymongo
+
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))   # refers to application_top
 APP_STATIC = os.path.join(APP_ROOT, 'static')
 
 app = Flask('ShortyLogin')
-USERS = {}
+
+client = pymongo.MongoClient("mongodb+srv://dabestteam:dabestteam@cluster0.j5lwe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+db = client.wbcs
+USERS = db['users']
+
 
 SECRET = os.environ['JWT_SECRET']
 
@@ -22,12 +28,12 @@ def create_one_user():
             return 'Missing parameters', 400
         if password is None or password == '':
             return 'Missing parameters', 400
-        if username in USERS:
+        result = USERS.find_one({"username": username, "password": password})
+        if result is not None:
             return f'Username already exist', 409
         else:
-            USERS[username] = {}
-            USERS[username]['password'] = password
-            print(USERS)
+            user = {"username": username, "password": password}
+            USERS.insert_one(user)
             return f'Success', 200
     except Exception as e:
         print(e)
@@ -40,8 +46,9 @@ def login():
     password = request.form.get('password')
     stamp = datetime.now() + timedelta(days=1)
     try:
-        if username in USERS.keys() and password == USERS[username]['password']:
-            return "{encoded_jwt}".format(encoded_jwt=jwt.encode({"username": "{name}".format(name = username), "exp": stamp}, SECRET, algorithm="HS256")), 200
+        result = USERS.find_one({"username": username, "password": password})
+        if result is not None:
+            return "{encoded_jwt}".format(encoded_jwt=jwt.encode({"username": "{name}".format(name=username), "exp": stamp}, SECRET, algorithm="HS256")), 200
         else:
             return f"check the username and password", 403
     except Exception as e:
