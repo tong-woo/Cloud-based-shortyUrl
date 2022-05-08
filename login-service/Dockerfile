@@ -6,6 +6,7 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8081
 
-CMD ["python3", "./login-service/ShortyLogin.py"]
+CMD ["python3", "./ShortyLogin.py"]
+
 
 
