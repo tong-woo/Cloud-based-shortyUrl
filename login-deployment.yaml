@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: login
+  name: login
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      io.kompose.service: login
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/shorty-network: "true"
+        io.kompose.service: login
+    spec:
+      containers:
+        - env:
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  key: JWT_SECRET
+                  name: login-service--env
+          image: zhaolinfang/login:1.0.0
+          name: login-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8081
+          resources: {}
+      restartPolicy: Always
+status: {}

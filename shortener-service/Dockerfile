@@ -6,6 +6,6 @@ RUN pip install -r requirements.txt
 
 EXPOSE 8080
 
-CMD ["python3", "./shortener-service/ShortyURL.py"]
+CMD ["python3", "./ShortyURL.py"]
 
 
