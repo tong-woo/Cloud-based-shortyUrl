@@ -34,9 +34,11 @@ spec:
                   name: login-service--env
           image: zhaolinfang/login:1.0.0
           name: login-service
-          imagePullPolicy: Always
-          ports:
+          imagePullPolicy: Always # Always: Kubernetes will always pull the image from the Repository. 
+                                  # IfNotPresent: Kubernetes will always pull the image from the Repository if it does not already exist on the Node
+                                  # Never: K8s will never pull the image
+          ports: 
             - containerPort: 8081
           resources: {}
-      restartPolicy: Always
+      restartPolicy: Always # Always restart the container if it stops https://docs.docker.com/config/containers/start-containers-automatically/
 status: {}
