@@ -12,9 +12,9 @@ spec:
   type: NodePort
   ports:
     - name: "8081"
-      port: 8081
-      targetPort: 8081
-      nodePort: 31000
+      port: 8081 # exposed service port from container
+      targetPort: 8081 #  actual port on which the application is running inside the container
+      nodePort: 31000  # The port on the node where external traffic will come in on
   selector:
     io.kompose.service: login
 status:
