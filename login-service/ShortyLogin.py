@@ -10,7 +10,7 @@ APP_STATIC = os.path.join(APP_ROOT, 'static')
 
 app = Flask('ShortyLogin')
 
-client = pymongo.MongoClient("mongodb+srv://dabestteam:dabestteam@cluster0.j5lwe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://tong:<password>@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
 db = client.wbcs
 USERS = db['users']
 

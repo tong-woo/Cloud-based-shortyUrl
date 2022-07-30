@@ -13,7 +13,7 @@ SECRET = os.environ['JWT_SECRET']
 
 app = Flask('ShortyURL')
 
-client = pymongo.MongoClient("mongodb+srv://dabestteam:dabestteam@cluster0.j5lwe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://tong:<password>@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
 db = client.wbcs
 URLs = db['urls']
 
