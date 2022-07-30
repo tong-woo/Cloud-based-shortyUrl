@@ -17,5 +17,7 @@ spec:
       nodePort: 31000
   selector:
     io.kompose.service: shortener
+  externalIPs:
+
 status:
   loadBalancer: {}
