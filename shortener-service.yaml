@@ -14,7 +14,7 @@ spec:
     - name: "8080"
       port: 8080
       targetPort: 8080
-      nodePort: 32000
+      nodePort: 31000
   selector:
     io.kompose.service: shortener
 status:
