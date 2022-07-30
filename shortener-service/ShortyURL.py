@@ -15,7 +15,7 @@ app = Flask('ShortyURL')
 
 client = pymongo.MongoClient("mongodb+srv://tong:mongodb@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
 db = client.test
-USERS = db['urls']
+URLs = db['urls']
 
 IDS_COUNTER = 0
 
