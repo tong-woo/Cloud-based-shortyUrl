@@ -13,9 +13,9 @@ SECRET = os.environ['JWT_SECRET']
 
 app = Flask('ShortyURL')
 
-client = pymongo.MongoClient("mongodb+srv://tong:<password>@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
-db = client.wbcs
-URLs = db['urls']
+client = pymongo.MongoClient("mongodb+srv://tong:mongodb@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
+db = client.test
+USERS = db['urls']
 
 IDS_COUNTER = 0
 
@@ -85,6 +85,7 @@ def delete_one_url(id):
     except Exception as e:
         print(e)
         return f'Unexpected error', 500
+
 
 
 @app.route('/', methods=['POST'])

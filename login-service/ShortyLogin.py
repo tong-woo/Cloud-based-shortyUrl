@@ -10,11 +10,10 @@ APP_STATIC = os.path.join(APP_ROOT, 'static')
 
 app = Flask('ShortyLogin')
 
-client = pymongo.MongoClient("mongodb+srv://tong:<password>@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
-db = client.wbcs
+
+client = pymongo.MongoClient("mongodb+srv://tong:mongodb@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
+db = client.test
 USERS = db['users']
-
-
 SECRET = os.environ['JWT_SECRET']
 
 
