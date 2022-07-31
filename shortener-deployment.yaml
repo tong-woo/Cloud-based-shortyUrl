@@ -32,7 +32,7 @@ spec:
                 configMapKeyRef:
                   key: JWT_SECRET
                   name: shortener-service--env
-          image: zhaolinfang/shortener:1.0.2
+          image: tongwoo98/cloud-based-shortyurl_shortener:1.0.0
           name: shortener-service
           imagePullPolicy: Always  
           ports:

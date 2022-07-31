@@ -32,7 +32,7 @@ spec:
                 configMapKeyRef:
                   key: JWT_SECRET
                   name: login-service--env
-          image: zhaolinfang/login:1.0.0
+          image: tongwoo98/cloud-based-shortyurl_login:1.0.0
           name: login-service
           imagePullPolicy: Always # Always: Kubernetes will always pull the image from the Repository. 
                                   # IfNotPresent: Kubernetes will always pull the image from the Repository if it does not already exist on the Node
