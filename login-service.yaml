@@ -12,7 +12,7 @@ spec:
   type: NodePort
   ports:
     - name: "8081"
-      port: 81 # exposed service port from container
+      port: 8081 # exposed service port from container
       targetPort: 8081 #  actual port on which the application is running inside the container
       nodePort: 31000  # The port on the node where external traffic will come in on
   selector:
