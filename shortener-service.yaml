@@ -14,10 +14,8 @@ spec:
     - name: "8080"
       port: 8080
       targetPort: 8080
-      nodePort: 31000
+      nodePort: 32000
   selector:
     io.kompose.service: shortener
-  externalIPs:
-
 status:
   loadBalancer: {}

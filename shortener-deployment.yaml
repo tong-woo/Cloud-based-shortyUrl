@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: shortener
   name: shortener
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: shortener

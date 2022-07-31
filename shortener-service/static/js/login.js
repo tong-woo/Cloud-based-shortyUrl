@@ -5,7 +5,7 @@ $(document).ready(function(){
         let username = $('#username').val();
         let password = $('#password').val();
         $('#extra-message-login').empty();
-        $.ajax('http://34.200.250.27:8081/users/login', {
+        $.ajax('https://172.31.1.250:31000/users/login', {
             type: 'POST',
             data: { username, password },
             statusCode: {
@@ -35,7 +35,7 @@ $(document).ready(function(){
         let username = $('#new-username').val();
         let password = $('#new-password').val();
         $('#extra-message-register').empty();
-        $.ajax('http://34.200.250.27:8081/users', {
+        $.ajax('https://172.31.1.250:31000/users', {
             type: 'POST',
             data: { username, password },
             statusCode: {
