@@ -33,7 +33,7 @@ spec:
                   key: JWT_SECRET
                   name: shortener-service--env
           image: tongwoo98/cloud-based-shortyurl_shortener:1.0.0
-          name: tongwoo98/cloud-based-shortyurl_shortener
+          name: tongwoo98shortener
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
