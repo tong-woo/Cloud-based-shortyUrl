@@ -33,7 +33,7 @@ spec:
                   key: JWT_SECRET
                   name: login-service--env
           image: tongwoo98/cloud-based-shortyurl_login:1.0.0
-          name: tongwoo98/cloud-based-shortyurl_login:1.0.0
+          name: tongwoo98/cloud-based-shortyurl_login
           imagePullPolicy: Always # Always: Kubernetes will always pull the image from the Repository.
             # IfNotPresent: Kubernetes will always pull the image from the Repository if it does not already exist on the Node
           # Never: K8s will never pull the image
