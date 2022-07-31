@@ -1,29 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
-#metadata:
-#  annotations:
-#    kompose.cmd: kompose convert
-#    kompose.version: 1.26.0 (40646f47)
-#  creationTimestamp: null
-#  labels:
-#    io.kompose.service: shortener
-#  name: shortener
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: shortener
+  name: shortener
 spec:
-  replicas: 1
-#  selector:
-#    matchLabels:
-#      io.kompose.service: shortener
+  replicas: 3
+  selector:
+    matchLabels:
+      io.kompose.service: shortener
   strategy:
     type: Recreate
-#  template:
-#    metadata:
-#      annotations:
-#        kompose.cmd: kompose convert
-#        kompose.version: 1.26.0 (40646f47)
-#      creationTimestamp: null
-#      labels:
-#        io.kompose.network/shorty-network: "true"
-#        io.kompose.service: "shortener"
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/shorty-network: "true"
+        io.kompose.service: "shortener"
     spec:
       containers:
         - env:
@@ -32,9 +32,9 @@ spec:
                 configMapKeyRef:
                   key: JWT_SECRET
                   name: shortener-service--env
-          image: tongwoo98/cloud-based-shortyurl_shortener:1.0.0
-          name: shortener-service-1
-          imagePullPolicy: IfNotPresent
+          image: zhaolinfang/shortener:1.0.2
+          name: shortener-service
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
           resources: {}

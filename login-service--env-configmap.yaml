@@ -4,6 +4,6 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-#  labels:
-#    io.kompose.service: login-login-service--env
+  labels:
+    io.kompose.service: login-login-service--env
   name: login-service--env

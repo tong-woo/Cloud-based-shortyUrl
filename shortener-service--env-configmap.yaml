@@ -4,6 +4,6 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-#  labels:
-#    io.kompose.service: shortener-shortener-service--env
+  labels:
+    io.kompose.service: shortener-shortener-service--env
   name: shortener-service--env
