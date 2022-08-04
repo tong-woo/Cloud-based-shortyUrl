@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.24.0 (4a2a0458)
+    kompose.version: 1.26.0 (40646f47)
   creationTimestamp: null
   labels:
     io.kompose.service: login
@@ -19,7 +19,7 @@ spec:
     metadata:
       annotations:
         kompose.cmd: kompose convert
-        kompose.version: 1.24.0 (4a2a0458)
+        kompose.version: 1.26.0 (40646f47)
       creationTimestamp: null
       labels:
         io.kompose.network/shorty-network: "true"
@@ -32,8 +32,8 @@ spec:
                 configMapKeyRef:
                   key: JWT_SECRET
                   name: login-service--env
-          image: tongwoo98/cloud-based-shortyurl_login:1.0.0
-          name: tongwoo98login
+          image: zhaolinfang/login:1.0.0
+          name: login-service
           imagePullPolicy: Always # Always: Kubernetes will always pull the image from the Repository.
             # IfNotPresent: Kubernetes will always pull the image from the Repository if it does not already exist on the Node
           # Never: K8s will never pull the image

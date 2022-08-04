@@ -19,12 +19,14 @@ URLs = db['urls']
 
 IDS_COUNTER = 0
 
-CLOSED_ENDPOINTS = ['update_one_url', 'delete_one_url', 'create_url', 'get_urls', 'delete_url']
 
+
+CLOSED_ENDPOINTS = ['update_one_url', 'delete_one_url', 'create_url', 'get_urls', 'delete_url']
 
 @app.route('/home', methods=['GET'])
 def home():
     return render_template('home.html')
+
 
 
 @app.route('/login', methods=['GET'])

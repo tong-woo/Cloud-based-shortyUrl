@@ -11,10 +11,12 @@ APP_STATIC = os.path.join(APP_ROOT, 'static')
 app = Flask('ShortyLogin')
 
 
+
 client = pymongo.MongoClient("mongodb+srv://tong:mongodb@cluster0.emupq.mongodb.net/?retryWrites=true&w=majority")
 db = client.test
 USERS = db['users']
 SECRET = os.environ['JWT_SECRET']
+
 
 
 @app.route('/users', methods=['POST'])
@@ -54,7 +56,8 @@ def login():
         print(e)
         return f'Unexpected error', 500
 
-
+# Cross-origin resource sharing, Indicates which domains the requested resource can be shared to,
+# either a specific domain name or * indicating all domains.
 @app.after_request
 def add_header(response):
     response.headers['Access-Control-Allow-Origin'] = '*'
